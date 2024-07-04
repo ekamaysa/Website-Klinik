@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pasien - Mays LifeCare</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="branding">
+                <img src="images/Logo Klinik.png" alt="Mays LifeCare" class="logo">
+                <h1>Mays LifeCare</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="data_pasien.html">Data Pasien</a></li>
+                    <li><a href="jadwal.html">Jadwal Temu</a></li>
+                    <li><a href="pengaturan.html">Pengaturan</a></li>
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="data-pasien">
+        <div class="container">
+            <h2>Data Pasien</h2>
+            <div id="dataPasienList"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mays LifeCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pasienData = JSON.parse(localStorage.getItem('pasienData')) || [];
+            const dataPasienList = document.getElementById('dataPasienList');
+
+            if (pasienData.length === 0) {
+                dataPasienList.innerHTML = '<p>Tidak ada data pasien.</p>';
+            } else {
+                let listHTML = '<ul>';
+                pasienData.forEach(pasien => {
+                    listHTML += `
+                        <li>
+                            <p><strong>Nama:</strong> ${pasien.nama}</p>
+                            <p><strong>Tanggal Lahir:</strong> ${pasien.ttl}</p>
+                            <p><strong>Jenis Kelamin:</strong> ${pasien.jk}</p>
+                            <p><strong>No KTP:</strong> ${pasien.ktp}</p>
+                            <p><strong>Kontak:</strong> ${pasien.kontak}</p>
+                            <p><strong>Pembayaran:</strong> ${pasien.pembayaran}</p>
+                            ${pasien.pembayaran === 'bpjs' ? `<p><strong>No BPJS:</strong> ${pasien.noBpjs}</p>` : ''}
+                            <p><strong>Pelayanan:</strong> ${pasien.pelayanan}</p>
+                            <p><strong>Tanggal Berobat:</strong> ${pasien.tanggal}</p>
+                            <p><strong>Waktu Berobat:</strong> ${pasien.jam}</p>
+                        </li>
+                    `;
+                });
+                listHTML += '</ul>';
+                dataPasienList.innerHTML = listHTML;
+            }
+        });
+    </script>
+</body>
+</html>

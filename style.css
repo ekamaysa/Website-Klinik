@@ -1,0 +1,381 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #92cde0;
+    color: rgb(58, 96, 151);
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .branding {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    margin: 0;
+    color: #fc0505;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(18, 57, 84);
+    font-size: 15px;
+    padding: 10px 10px;
+    border-radius: 2px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+nav ul li a:hover, nav ul li a:active {
+    background-color: #ef7f75;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.custom-image {
+    width: 800px; 
+    height: auto; 
+    position: center;
+    top: 50%;
+    left: 50%;
+}
+.beranda-container{
+    background: #fff;
+    padding: 40px;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: center;
+    
+}
+#beranda p {
+    margin-top: 10px;
+    color: black;
+    text-align: left;
+}
+.profil-images {
+    width: 300px; 
+    height: auto; 
+    position: center;
+    top: 50%;
+    left: 50%;
+}
+.pelayanan-images{
+    width: 100px; 
+    height: auto; 
+    position: center;
+    top: 50%;
+    left: 50%;
+}
+
+section#pelayanan {
+    padding: 20px 0;
+}
+
+.pelayanan-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.pelayanan-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.pelayanan-images {
+    width: 100%;
+    height: auto;
+}
+
+.p-pelayanan {
+    margin-top: 10px;
+    color: black;
+    text-align: left;
+}
+.ul-pelayanan {
+    text-align: left;
+}
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+
+}
+#profile body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-container {
+    background: #fff;
+    padding: 40px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#profile h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#profile p {
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.vision-mission {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.vision, .mission {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+#profile h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#profile ul {
+    list-style: none;
+    padding: 0;
+}
+
+#profile li {
+    color: #555;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #24236e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form select, form textarea {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    border: 1px solid #f5eded;
+    background-color: #92cde0;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    outline: none;
+    border-color: #92cde0;
+}
+
+form button {
+    background-color: #92cde0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+form button:hover {
+    background-color: #395dee;
+}
+
+/* Gaya untuk section Akun */
+#akun {
+    background-color: #f8f8f8; 
+    padding: 40px 0; 
+    text-align: center; 
+}
+
+#akun h2 {
+    color: #24236e; 
+    font-size: 2em;
+    margin-bottom: 20px; 
+}
+
+#akun p {
+    font-size: 1.2em;
+    color: #333; 
+    margin-bottom: 20px; 
+}
+
+#akun button {
+    background-color: #92cde0; 
+    color: rgb(3, 3, 3); 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 1em; 
+    border-radius: 5px; 
+    margin: 0 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+#akun button:hover {
+    background-color: #395dee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+footer {
+    background-color: #92cde0;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+.dashboard-image{
+    width: 300px; 
+    height: auto; 
+    position: center;
+    top: 50%;
+    left: 50%;
+}
+.dashboard-container{
+    background: #fff;
+    padding: 40px;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: center;
+}
+
+#dashboard h1 {
+    color:#24236e;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#dashboard p {
+    color: #000000 ;
+    text-align: left;
+    margin-bottom: 10px;
+}
+#dashboard ul {
+    list-style: none;
+    padding: 0;
+}
+
+#dashboard li {
+    color: #000000 ;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+#dataPasienList ul {
+    list-style: none;
+    padding: 0;
+}
+
+#dataPasienList li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.receipt {
+    border: 1px solid #ccc;
+    padding: 10px; 
+    margin: 20px auto;
+    text-align: center;
+    width: 300px; 
+    font-family: Arial, sans-serif; 
+    background-color: #f9f9f9; 
+}
+
+.receipt img.logo {
+    max-width: 60px; 
+    margin-bottom: 10px;
+}
+
+.receipt h2 {
+    color: #e74c3c;
+    font-size: 20px; 
+}
+
+.receipt h3 {
+    color: #333;
+    font-size: 18px; 
+    margin-bottom: 10px; 
+}
+
+.receipt h1 {
+    font-size: 60px; 
+    margin: 10px 0; 
+}
+
+.receipt p {
+    margin: 5px 0;
+    font-size: 12px; 
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.receipt hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 10px 0; 
+}

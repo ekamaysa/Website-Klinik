@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - Mays LifeCare</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="branding">
+                <img src="images/Logo Klinik.png" alt="Mays LifeCare" class="logo">
+            <h1>Mays LifeCare</h1>
+            </div>
+        </div>
+    </header>
+
+    <section id="daftar">
+        <div class="container">
+            <h2>Daftar Akun</h2>
+            <form id="registerForm">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required>
+                <br>
+                <label for="tanggal">Tanggal Lahir:</label>
+                <input type="date" id="tanggal" name="tanggal" required>
+                <br>
+                <label for="jk">Jenis Kelamin:</label>
+                <select id="jk" name="jk" required>
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
+                </select>
+                <br>
+                <label for="ktp">No KTP:</label>
+                <input type="text" id="ktp" name="ktp" required>
+                <br>
+                <label for="alamat">Alamat Domisili:</label>
+                <textarea id="alamat" name="alamat" required></textarea>
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <br>
+                <label for="katasandi">Kata sandi:</label>
+                <input type="text" id="katasandi" name="katasandi" required>
+                <br>
+                <button type="submit">Daftar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mays LifeCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

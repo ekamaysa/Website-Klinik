@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Berobat - Mays LifeCare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="branding">
+                <img src="images/Logo Klinik.png" alt="Mays LifeCare" class="logo">
+                <h1>Mays LifeCare</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="data-pasien.html">Data Pasien</a></li>
+                    <li><a href="jadwal.html">Jadwal Temu</a></li>
+                    <li><a href="pengaturan.html">Pengaturan</a></li>
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="pendaftaran">
+        <div class="container">
+            <h2>Pendaftaran Berobat</h2>
+            <form id="pendaftaranForm">
+                <label for="nama">Nama Pasien:</label>
+                <input type="text" id="nama" name="nama" required>
+                <br>
+                <label for="ttl">Tanggal Lahir:</label>
+                <input type="date" id="ttl" name="ttl" required>
+                <br>
+                <label for="jk">Jenis Kelamin:</label>
+                <select id="jk" name="jk" required>
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
+                </select>
+                <br>
+                <label for="ktp">No KTP:</label>
+                <input type="text" id="ktp" name="ktp" required>
+                <br>
+                <label for="kontak">Kontak:</label>
+                <input type="text" id="kontak" name="kontak" required>
+                <br>
+                <label for="pembayaran">Pembayaran:</label>
+                <select id="pembayaran" name="pembayaran" required>
+                    <option value="umum">Umum</option>
+                    <option value="bpjs">BPJS</option>
+                </select>
+                <br>
+                <div id="bpjsField" style="display: none;">
+                    <label for="noBpjs">No BPJS:</label>
+                    <input type="text" id="noBpjs" name="noBpjs">
+                    <br>
+                </div>
+                <label for="pelayanan">Pelayanan:</label>
+                <select id="pelayanan" name="pelayanan" required>
+                    <option value="Pelayanan Umum (Dr. Eka Maysa, Sp.PD)">Pelayanan Umum (Dr. Eka Maysa, Sp.PD)</option>
+                    <option value="Pelayanan Gigi (Drg. Rajana Putra, Sp.KG)">Pelayanan Gigi (Drg. Rajana Putra, Sp.KG)</option>
+                    <option value="Laboratorium (Dr. Dione Ivanna, Sp.PA)">Laboratorium (Dr. Dione Ivanna, Sp.PA)</option>
+                    <option value="Pelayanan Khusus (Dr. Juanna Darma, Sp.Rad)">Pelayanan Khusus (Dr. Juanna Darma, Sp.Rad)</option>
+                </select>
+                <br>
+                <label for="tanggal">Tanggal Berobat:</label>
+                <input type="date" id="tanggal" name="tanggal" required>
+                <br>
+                <label for="jam">Waktu Berobat:</label>
+                <select id="jam" name="jam" required>
+                    <option value="08:00">08:00 - 09:00</option>
+                    <option value="09:00">09:00 - 10:00</option>
+                    <option value="10:00">10:00 - 11:00</option>
+                    <option value="13:00">13:00 - 14:00</option>
+                    <option value="14:00">14:00 - 15:00</option>
+                    <option value="15:00">15:00 - 16:00</option>
+                </select>
+                <br>
+                <button type="submit">Daftar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mays LifeCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pendaftaranForm = document.getElementById('pendaftaranForm');
+            const pembayaranSelect = document.getElementById('pembayaran');
+            const bpjsField = document.getElementById('bpjsField');
+            const noBpjsInput = document.getElementById('noBpjs');
+
+            pembayaranSelect.addEventListener('change', function() {
+                if (pembayaranSelect.value === 'bpjs') {
+                    bpjsField.style.display = 'block';
+                    noBpjsInput.setAttribute('required', 'required');
+                } else {
+                    bpjsField.style.display = 'none';
+                    noBpjsInput.removeAttribute('required');
+                }
+            });
+
+            pendaftaranForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Mengambil nilai dari input form
+                const nama = document.getElementById('nama').value;
+                const ttl = document.getElementById('ttl').value;
+                const jk = document.getElementById('jk').value;
+                const ktp = document.getElementById('ktp').value;
+                const kontak = document.getElementById('kontak').value;
+                const pembayaran = document.getElementById('pembayaran').value;
+                const noBpjs = pembayaran === 'bpjs' ? document.getElementById('noBpjs').value : '';
+                const pelayanan = document.getElementById('pelayanan').value;
+                const tanggal = document.getElementById('tanggal').value;
+                const jam = document.getElementById('jam').value;
+
+                // Membuat objek data pasien
+                const pasien = {
+                    nama: nama,
+                    ttl: ttl,
+                    jk: jk,
+                    ktp: ktp,
+                    kontak: kontak,
+                    pembayaran: pembayaran,
+                    noBpjs: noBpjs,
+                    pelayanan: pelayanan,
+                    tanggal: tanggal,
+                    jam: jam
+                };
+
+                // Mendapatkan data yang ada di Local Storage atau membuat array kosong jika belum ada
+                const pasienData = JSON.parse(localStorage.getItem('pasienData')) || [];
+
+                // Menambahkan data pasien baru ke dalam array
+                pasienData.push(pasien);
+
+                // Menyimpan kembali data pasien ke Local Storage
+                localStorage.setItem('pasienData', JSON.stringify(pasienData));
+
+                // Memberi notifikasi bahwa pendaftaran berhasil
+                alert('Pendaftaran berhasil!');
+
+                window.location.href = 'data_pasien.html';
+            });
+        });
+    </script>
+</body>
+</html>
